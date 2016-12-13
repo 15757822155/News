@@ -183,6 +183,10 @@ public class HomeActivity extends AppCompatActivity
             ft.commit();
             //初始化currentFragment为当前Fragment
             currentFragment = newsPagerFragment;
+
+
+
+            
         }
     }
 

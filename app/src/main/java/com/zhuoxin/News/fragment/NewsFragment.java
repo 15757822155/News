@@ -242,6 +242,8 @@ public class NewsFragment extends Fragment {
                 NewsOfJuhe.Result result = newsData.getResult();
                 //如果从服务器获取的result不为空,做以下内容
                 if (result != null) {
+                    //防止数据多出来
+                    newsInfoList.clear();
                     //从保存的数据中取出数据
                     List<NewsOfJuhe.Data> dataList = result.getData();
                     //如果从服务器获取的dataList不为空,做以下内容

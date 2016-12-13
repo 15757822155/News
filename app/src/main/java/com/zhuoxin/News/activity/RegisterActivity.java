@@ -61,9 +61,9 @@ public class RegisterActivity extends AppCompatActivity {
         user_password = MD5Util.getMD5(user_password);
         //用Volley进行网络数据处理
         String url = "http://118.244.212.82:9092/newsClient/user_register?ver=1&uid=" + user_id + "&pwd=" + user_password + "&email=" + user_email;
-        //创建一个请求队列
+        //1.创建一个请求队列
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        //创建请求(网络地址,成功的返回,失败的返回)
+        //2.创建请求(网络地址,成功的返回,失败的返回)
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             //注册成功的返回,返回的内容全部在response中
             @Override
@@ -81,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, "注册失败,请重试", Toast.LENGTH_SHORT).show();
             }
         });
-        //将请求添加到队列中
+        //3.将请求添加到队列中
         requestQueue.add(stringRequest);
     }
 
